@@ -1,28 +1,29 @@
 import React from 'react';
 import { fastagProviders } from '../data/providers';
 
-const ProviderGrid = () => {
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">Supported FASTag Providers</h2>
-        
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {fastagProviders.map(provider => (
-            <div 
-              key={provider.id}
-              className="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition cursor-pointer"
-            >
-              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">
-                {provider.name.substring(0, 2).toUpperCase()}
-              </div>
-              <p className="text-sm font-medium text-gray-700">{provider.name}</p>
-            </div>
-          ))}
-        </div>
+const ProviderGrid = () => (
+  <section className="py-12 bg-gray-50 min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl font-bold text-center mb-10">FASTag Provider</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {fastagProviders.map(provider => (
+          <div
+            key={provider.id}
+            className="bg-white rounded-lg shadow border hover:shadow-lg flex flex-col items-center p-6 justify-center transition"
+          >
+            <img
+              src={`/images/${provider.image}`}
+              alt={provider.name}
+              className="w-20 h-20 object-contain mb-4"
+            />
+            <p className="text-md font-medium text-gray-800 text-center truncate w-full">
+              {provider.name}
+            </p>
+          </div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default ProviderGrid;
