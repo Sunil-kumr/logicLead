@@ -7,6 +7,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import PromoBanner from './components/PromoBanner';
 import PanCardBanner from './components/PanCardBanner';
+import BottomBanner from './components/BottomBanner';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <PanCardBanner />
       <AboutUs />
       <FAQ />
+      <BottomBanner />
       <Footer />
     </div>
   );

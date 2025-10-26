@@ -6,24 +6,31 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white shadow-md sticky top-0 z-50">
+      <header className="bg-teal-500 shadow-md  top-0 z-50 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="logo">
-              <h1 className="text-2xl font-bold text-primary">Logiclead</h1>
+          {/* On mobile: vertical, on desktop: horizontal */}
+          <div className="flex flex-col items-center sm:flex-row sm:justify-between py-4">
+            <div className="logo flex items-center gap-2 mb-3 sm:mb-0">
+              <img
+                src="/images/logic.png"
+                alt="Logiclead Logo"
+                className="h-8 w-auto"
+                style={{ maxHeight: '34px' }}
+              />
             </div>
-            <nav className="flex gap-3">
+            {/* Stack buttons on mobile, side by side on desktop */}
+            <nav className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center sm:justify-end">
               <button
-                className="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg font-medium hover:bg-gray-200 transition"
+                className="w-full sm:w-auto px-4 py-2 bg-white text-[#00716c] rounded-lg font-medium hover:bg-gray-100 transition"
                 onClick={() => setShowLogin(true)}
               >
                 💰 Wallet
               </button>
               <button
-                className="px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition"
+                className="w-full sm:w-auto px-4 py-2 bg-yellow-400 text-[#00716c] rounded-lg font-medium hover:bg-yellow-500 transition"
                 onClick={() => setShowLogin(true)}
               >
-                Login / Signup
+                Login
               </button>
             </nav>
           </div>
